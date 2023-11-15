@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Panduan Penyimpanan Makanan</title>
+  <title>Sumbangan Makanan</title>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,50 +26,51 @@
       background-color: #F5EEC8;
     }
 
-    .slideshow-container {
-      max-width: 100%;
-      position: relative;
-      margin: auto;
-    }
-
-    .mySlides {
-      display: none;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-
     .container {
       max-width: 600px;
       padding: 20px;
       text-align: center;
     }
 
-    .card {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-      padding: 20px;
-      text-align: left;
+    .image-container {
+      aspect-ratio: 1.51;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      overflow: hidden;
     }
 
-    .card h2 {
-      color: #53A93E;
+    .donate-button {
+      color: #40822f;
+      background-color: #53a93e;
+      padding: 15px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
     }
 
-    .card p {
-      color: #333;
+    @media (max-width: 991px) {
+      .donate-button {
+        margin-top: 40px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .image-container {
+        margin-top: 20px;
+      }
     }
   </style>
+
 </head>
 
 <body>
   <!-- Navbar start -->
-  <nav class="navbar">
+  <<nav class="navbar">
     <a href="#" class="navbar-logo">saling<span>peduli</span></a>
     <ul>
       <li><a href="beranda">Beranda</a></li>
@@ -107,76 +108,22 @@
   </nav>
   <!-- Navbar end -->
 
-  <!-- Slideshow -->
-  <div class="slideshow-container">
-    <div class="mySlides">
-      <img src="slide1.jpg" alt="Slide 1">
-    </div>
-
-    <div class="mySlides">
-      <img src="slide2.jpg" alt="Slide 2">
-    </div>
-
-    <div class="mySlides">
-      <img src="slide3.jpg" alt="Slide 3">
-    </div>
-  </div>
-
   <!-- Isi -->
   <div class="container">
-    <h1>Panduan Penyimpanan Makanan</h1>
+    <h1 style="color: #53a93e;">JANGAN BUANG MAKANANMU!</h1>
+    <p style="color: #53a93e;">Ada 16.2 juta manusia di Indonesia yang mengalami kelaparan. Mari bantu mereka dengan menyumbangkan sisa makananmu</p>
 
-    <div class="card">
-      <h2>Langkah 1</h2>
-      <p>Makanan basah atau makanan yang mudah basi disimpan di dalam kulkas atau freezer.</p>
+    <div class="image-container">
+      <img loading="lazy" src="https://example.com/your-image.jpg" alt="Ajakan Donasi" />
     </div>
 
-    <div class="card">
-      <h2>Langkah 2</h2>
-      <p>Makanan kering atau tidak mudah basi disimpan dalam tempat tertutup.</p>
-    </div>
-
-    <div class="card">
-      <h2>Langkah 3</h2>
-      <p>Daging-dagingan atau makanan yang berbau menyengat disimpan dalam wadah dan terpisah dari makanan lain.</p>
-    </div>
-
-    <div class="card">
-      <h2>Langkah 4</h2>
-      <p>Sayur dan buah disimpan terpisah dari makanan lain.</p>
-    </div>
+    <a href="formsumbangan.html" class="donate-button">DONASI</a>
   </div>
 
   <!-- Feather icon -->
   <script>
     feather.replace();
   </script>
-
-  <!-- Slideshow script -->
-  <script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      let i;
-      const slides = document.getElementsByClassName("mySlides");
-
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-
-      slideIndex++;
-
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-
-      slides[slideIndex - 1].style.display = "block";
-
-      setTimeout(showSlides, 2000); // Change slide every 2 seconds
-    }
-  </script>
-
 </body>
 
 </html>
