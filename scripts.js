@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     // Toggle sub-navbar on profile icon click
     document.getElementById("profil").addEventListener("click", function () {
       document.querySelector(".sub-navbar").classList.toggle("active");

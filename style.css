@@ -167,8 +167,10 @@ body {
 /* Navbar */
 .slogan {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh; /* Adjust this value based on your needs */
 }
 
 .faq {
@@ -214,4 +216,14 @@ footer {
   text-align: center;
   padding: 20px;
   color: #333;
+}
+
+
+
+.content {
+  text-align: center;
+}
+
+.gambarberanda {
+  margin-top: 20px; /* Adjust the margin as needed */
 }

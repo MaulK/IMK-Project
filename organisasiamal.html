@@ -23,12 +23,24 @@
       margin: 0;
       padding: 0;
       background-color: #F5EEC8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
 
     .container {
       width: 80%;
-      margin: 0 auto;
+      max-width: 1200px; /* Set a max-width to avoid the content becoming too wide */
+      margin: 20px auto; /* Add some margin to the top to separate from the navbar */
       padding: 20px;
+    }
+
+    body::before {
+      content: "";
+      display: block;
+      height: 80px; /* Adjust this height to match the height of your navbar */
     }
 
     /* Navbar styles */
@@ -93,6 +105,14 @@
       overflow: hidden;
     }
 
+    .card .card-content h3 {
+      color: #0F993E;
+    }
+
+    .card .card-content p {
+      color: #000;
+    }
+
     .card img {
       width: 100%;
       height: auto;
@@ -112,7 +132,7 @@
     .page-link {
       padding: 10px;
       margin: 0 5px;
-      background-color: #3498db;
+      background-color: #53A93E;
       color: #fff;
       text-decoration: none;
       border-radius: 4px;
@@ -128,9 +148,9 @@
   <nav class="navbar">
     <a href="#" class="navbar-logo">saling<span>peduli</span></a>
     <ul>
-      <li><a href="beranda">Beranda</a></li>
+      <li><a href="halamanutama.html">Beranda</a></li>
       <li>
-        <a href="programsumbangan">Program Sumbangan</a>
+        <a>Program Sumbangan</a>
         <ul>
           <li><a href="organisasiamal.html">Organisasi Amal</a></li>
           <li><a href="sumbanganmakanan.html">Sumbangan Makanan</a></li>
@@ -138,13 +158,13 @@
           <li><a href="jadwalpengambilan.html">Jadwal Pengambilan</a></li>
         </ul>
       </li>
-      <li><a href="sumberdaya">Sumber Daya</a>
+      <li><a>Sumber Daya</a>
         <ul>
           <li><a href="panduanpenyimpanan.html">Panduan Penyimpanan Makanan</a></li>
           <li><a href="panduankeamanan.html">Panduan Keamanan Pangan</a></li>
         </ul>
       </li>
-      <li><a href="berita">Berita dan Artikel</a></li>
+      <li><a href="beritadanartikel.html">Berita dan Artikel</a></li>
       <li><a href="faq.html">FAQ</a></li>
     </ul>
 
@@ -165,13 +185,13 @@
 
   <!-- Content -->
   <div class="container">
-    <h2>Daftar Organisasi Amal</h2>
+    <h2 style="color: #0F993E;">Daftar Organisasi Amal</h2>
     <div class="organisasi-amal">
       <div class="card">
         <img src="organisasi1.jpg" alt="Organisasi Amal 1">
         <div class="card-content">
           <h3>Organisasi Amal 1</h3>
-          <p>Deskripsi singkat mengenai Organisasi Amal 1.</p>
+          <p style="color: #000;">Deskripsi singkat mengenai Organisasi Amal 1.</p>
         </div>
       </div>
       <div class="card">
@@ -210,6 +230,8 @@
       <a href="#" class="page-link">Next</a>
     </div>
   </div>
+  <!-- Content End -->
+
   <!-- Feather icon -->
   <script>
     feather.replace();
