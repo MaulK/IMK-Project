@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Utama</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet" />
+
+  <!-- Feather icon -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F5EEC8;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 7%;
+      border-bottom: 1px solid #0F993E;
+      position: fixed;
+      background-color: #53A93E;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+    }
+
+    .navbar-logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #FBFBFB;
+    }
+
+    .navbar-logo span {
+      color: #F5EEC8;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      margin-left: auto;
+    }
+
+    .navbar a {
+      color: #F5EEC8;
+      text-decoration: none;
+    }
+
+    .box {
+      height: 45px;
+      display: flex;
+      cursor: pointer;
+      padding: 10px;
+      background: #fff;
+      border-radius: 30px;
+      margin-left: auto;
+    }
+
+    /* Content styles */
+    .organisasi-amal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .card {
+      width: 30%;
+      margin: 20px 0;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .page-link {
+      padding: 10px;
+      margin: 0 5px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar start -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">saling<span>peduli</span></a>
+    <ul>
+      <li><a href="beranda">Beranda</a></li>
+      <li>
+        <a href="programsumbangan">Program Sumbangan</a>
+        <ul>
+          <li><a href="#">Organisasi Amal</a></li>
+          <li><a href="#">Sumbangan Makanan</a></li>
+          <li><a href="#">Proses Penilaian Makanan</a></li>
+          <li><a href="#">Jadwal Pengambilan</a></li>
+        </ul>
+      </li>
+      <li><a href="sumberdaya">Sumber Daya</a>
+        <ul>
+          <li><a href="#">Panduan Penyimpanan Makanan</a></li>
+          <li><a href="#">Panduan Keamanan Pangan</a></li>
+        </ul>
+      </li>
+      <li><a href="berita">Berita dan Artikel</a></li>
+      <li><a href="faq">FAQ</a></li>
+    </ul>
+
+    <div class="box">
+      <input type="text" placeholder="Search...">
+      <a href="#" id="search"><i data-feather="search"></i></a>
+    </div>
+
+    <div class="profil">
+      <a href="#" id="profil"><i data-feather="user"></i></a>
+      <div class="sub-navbar">
+        <a href="#">Masuk</a>
+        <a href="#">Daftar</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end -->
+
+  <!-- Content -->
+  <div class="container">
+    <h2>Daftar Organisasi Amal</h2>
+    <div class="organisasi-amal">
+      <div class="card">
+        <img src="organisasi1.jpg" alt="Organisasi Amal 1">
+        <div class="card-content">
+          <h3>Organisasi Amal 1</h3>
+          <p>Deskripsi singkat mengenai Organisasi Amal 1.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="organisasi2.jpg" alt="Organisasi Amal 2">
+        <div class="card-content">
+          <h3>Organisasi Amal 2</h3>
+          <p>Deskripsi singkat mengenai Organisasi Amal 2.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="organisasi3.jpg" alt="Organisasi Amal 3">
+        <div class="card-content">
+          <h3>Organisasi Amal 3</h3>
+          <p>Deskripsi singkat mengenai Organisasi Amal 3.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="organisasi4.jpg" alt="Organisasi Amal 4">
+        <div class="card-content">
+          <h3>Organisasi Amal 4</h3>
+          <p>Deskripsi singkat mengenai Organisasi Amal 4.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="organisasi5.jpg" alt="Organisasi Amal 5">
+        <div class="card-content">
+          <h3>Organisasi Amal 5</h3>
+          <p>Deskripsi singkat mengenai Organisasi Amal 5.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pagination">
+      <a href="#" class="page-link">Previous</a>
+      <a href="#" class="page-link">1</a>
+      <a href="#" class="page-link">2</a>
+      <a href="#" class="page-link">Next</a>
+    </div>
+  </div>
+  <!-- Feather icon -->
+  <script>
+    feather.replace();
+  </script>
+</body>
+
+</html>
