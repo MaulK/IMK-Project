@@ -1,43 +1,36 @@
-  document.addEventListener("DOMContentLoaded", function () {
-    // Toggle sub-navbar on profile icon click
-    document.getElementById("profil").addEventListener("click", function () {
-      document.querySelector(".sub-navbar").classList.toggle("active");
-    });
-  
-    // Close sub-navbar when clicking outside
-    document.addEventListener("click", function (event) {
-      const subNavbar = document.querySelector(".sub-navbar");
-      if (event.target.closest(".profil") === null && event.target !== subNavbar) {
-        subNavbar.classList.remove("active");
-      }
-    });
-  
-    // Toggle search box on search icon click
-    document.getElementById("search").addEventListener("click", function () {
-      const searchBox = document.querySelector(".box input");
-      searchBox.classList.toggle("active");
-      searchBox.focus();
-    });
-  
-    // Close search box when clicking outside
-    document.addEventListener("click", function (event) {
-      const searchBox = document.querySelector(".box input");
-      if (event.target !== searchBox && !searchBox.contains(event.target)) {
-        searchBox.classList.remove("active");
-      }
-    });
-  
-    // Dropdown menu functionality
-    const dropdowns = document.querySelectorAll(".navbar ul li");
-  
-    dropdowns.forEach(function (dropdown) {
-      dropdown.addEventListener("mouseenter", function () {
-        this.querySelector("ul").classList.add("active");
-      });
-  
-      dropdown.addEventListener("mouseleave", function () {
-        this.querySelector("ul").classList.remove("active");
-      });
-    });
+// Function to handle the search box
+function handleSearch() {
+  const searchInput = document.querySelector('input[type="text"]');
+  const searchIcon = document.getElementById('search');
+
+  searchIcon.addEventListener('click', function () {
+    const searchTerm = searchInput.value;
+    alert('Search Term: ' + searchTerm);
+    // You can replace the alert with your search functionality
   });
-  
+}
+
+// Function to handle profile dropdown
+function handleProfileDropdown() {
+  const profileIcon = document.getElementById('profil');
+  const subNavbar = document.querySelector('.sub-navbar');
+
+  profileIcon.addEventListener('click', function () {
+    subNavbar.classList.toggle('show');
+  });
+
+  // Close dropdown when clicking outside of it
+  document.addEventListener('click', function (event) {
+    if (!event.target.closest('.profil')) {
+      subNavbar.classList.remove('show');
+    }
+  });
+}
+
+// Execute functions when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+  feather.replace(); // Replace Feather icons
+
+  handleSearch();
+  handleProfileDropdown();
+});
