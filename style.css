@@ -1,5 +1,5 @@
 :root {
-  --primary: #53A93E; 
+  --primary: #53A93E;
   --bg: #F5EEC8;
 }
 
@@ -17,6 +17,7 @@ body {
   background-color: var(--bg);
   color: #ffff;
   margin-top: 60px; /* Adjusted to account for the fixed navbar */
+  margin: 0; /* Remove default body margin */
 }
 
 /* Navbar */
@@ -24,13 +25,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.4rem 7%;
+  padding: 1.4rem 5%; /* Adjusted padding for smaller screens */
   border-bottom: 1px solid #0F993E;
   position: fixed;
   background-color: #53A93E;
   top: 0;
   left: 0;
   right: 0;
+  width: 100%; /* Ensure the navbar covers the entire width */
   z-index: 9999;
 }
 
@@ -104,11 +106,16 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding: 1.4rem 5%;
+    position: relative; /* Remove fixed position for smaller screens */
+  }
+
+  .navbar-logo {
+    margin-bottom: 10px; /* Adjust spacing for smaller screens */
   }
 
   .navbar ul {
     flex-direction: column;
-    align-items: flex-end; /* Align the navbar items to the right */
+    align-items: flex-start; /* Align the navbar items to the left */
   }
 
   .navbar ul li {
@@ -120,7 +127,7 @@ body {
   }
 
   .box {
-    margin-left: 0; /* Reset margin for the search box on smaller screens */
+    margin-left: auto; /* Align the search box to the right */
   }
 
   .profil {
@@ -139,6 +146,55 @@ body {
 
   .slogan-text {
     text-align: center;
+  }
+}
+
+/* Navbar Styling */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.4rem 5%;
+  }
+
+  .navbar ul li a {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+/* Search Box and Profile Icon */
+@media (max-width: 768px) {
+  .box {
+    margin-left: 0;
+  }
+
+  .profil {
+    order: -1;
+  }
+}
+
+/* Slogan Section */
+@media (max-width: 768px) {
+  .slogan-container {
+    max-width: 100%;
+  }
+
+  .slogan-text {
+    text-align: center;
+  }
+}
+
+/* Footer Styling */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+}
+
+/* Image Section */
+@media (max-width: 768px) {
+  .gambarberanda {
+    width: 100%;
+    margin-left: 0;
   }
 }
 

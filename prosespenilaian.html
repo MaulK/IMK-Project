@@ -3,6 +3,7 @@
 
 <head>
   <title>Proses Penilaian Makanan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,6 +55,42 @@
     font-size: 16px;
     color: #333;
     line-height: 1.5;
+    }
+
+    /* Background Color */
+    body {
+      background-color: #F5EEC8;
+    }
+
+    /* Container Styling */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+    }
+
+    /* Image Styling */
+    .step img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 600px) {
+      .step img {
+        max-width: 80%;
+      }
+    }
+
+    /* Text Styling */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      .step p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
     }
 
   </style>

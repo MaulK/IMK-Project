@@ -3,6 +3,7 @@
 
 <head>
   <title>Panduan Keamanan Makanan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,7 +48,7 @@
       text-align: center;
     }
 
-    .container h1 {
+    .h1 {
       color: #0F993E;
     }
 
@@ -60,13 +61,26 @@
       padding: 20px;
       text-align: left;
     }
-
-    .card h2 {
-      color: #53A93E;
-    }
-
+   
     .card p {
       color: #333;
+    }
+    
+    /* Container Styling */
+    .container {
+      max-width: 80%;
+      padding: 20px;
+    }
+
+    /* Card Styling */
+    .card {
+      max-width: 100%;
+      padding: 15px;
+    }
+    
+    /* Heading Colors */
+    .card h2 {
+      color: #0F993E;
     }
   </style>
 
@@ -130,9 +144,8 @@
   </div>
 
   <!-- Content -->
+  <h1>Panduan Keamanan Makanan</h1>
   <div class="container">
-    <h1>Panduan Keamanan Makanan</h1>
-
     <div class="card">
       <h2>Langkah 1</h2>
       <p>Cuci tangan Anda sebelum menyiapkan atau menyentuh makanan.</p>

@@ -3,6 +3,7 @@
 
 <head>
   <title>Form Sumbangan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -63,6 +64,33 @@
         margin-top: 40px;
       }
     }
+
+    /* Container Styling */
+    .container {
+      max-width: 80%;
+      padding: 20px;
+    }
+
+    /* Form Styling */
+    form {
+      padding: 10px;
+    }
+
+    /* Input and Select Styling */
+    input, select {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    /* Button Styling */
+    @media (max-width: 991px) {
+      .donate-button {
+        padding: 12px 16px;
+        font-size: 16px;
+      }
+    }
+
+
   </style>
 
   <!-- Javascripts -->
@@ -110,9 +138,8 @@
   <!-- Navbar end -->
 
   <!-- Content -->
+  <h1 style="color: #53a93e;">Formulir Donasi Makanan</h1>
   <div class="container">
-    <h1 style="color: #53a93e;">Formulir Donasi Makanan</h1>
-
     <form>
       <label for="nama" style="color: #53a93e;">Nama Lengkap:</label>
       <input type="text" id="nama" name="nama" required>
