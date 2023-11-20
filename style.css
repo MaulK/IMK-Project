@@ -20,26 +20,35 @@ body {
   margin: 0; /* Remove default body margin */
 }
 
+body::before {
+  content: "";
+  display: block;
+  height: 80px; /* Adjust this height to match the height of your navbar */
+}
+
+
 /* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.4rem 5%; /* Adjusted padding for smaller screens */
+  padding: 1.4rem 5%;
   border-bottom: 1px solid #0F993E;
   position: fixed;
   background-color: #53A93E;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%; /* Ensure the navbar covers the entire width */
+  width: 100%;
   z-index: 9999;
 }
 
+/* Move the logo to the left corner */
 .navbar-logo {
   font-size: 2rem;
   font-weight: 700;
   color: #FBFBFB;
+  margin-right: auto; /* Move the logo to the left */
 }
 
 .navbar-logo span {
@@ -49,7 +58,7 @@ body {
 .navbar ul {
   display: flex;
   list-style: none;
-  margin-left: auto; 
+  margin-left: auto;
 }
 
 .navbar ul li {
@@ -86,6 +95,7 @@ body {
   display: block;
 }
 
+/* Search Box and Profile Icon */
 .box {
   height: 45px;
   display: flex;
@@ -93,12 +103,54 @@ body {
   padding: 10px;
   background: #fff;
   border-radius: 30px;
-  margin-left: auto; /* Align the search box to the right */
+  margin-left: 0; /* Align the box to the left */
+  margin-right: auto; /* Align the box to the right */
 }
 
 .box a {
   color: #333;
 }
+
+.profil {
+  position: relative;
+  margin-left: 20px; /* Add margin to separate the profile icon */
+  margin-right: auto; /* Align the profile to the right */
+}
+
+.sub-navbar {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #53A93E;
+  display: none;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profil:hover .sub-navbar {
+  display: flex;
+}
+
+.sub-navbar a {
+  padding: 10px;
+  color: #F5EEC8;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sub-navbar a:hover {
+  background-color: #0F993E;
+}
+
+
+
+
+
+.content {
+  text-align: center;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -133,20 +185,6 @@ body {
   .profil {
     order: -1; /* Move the profile icon to the beginning on smaller screens */
   }
-  
-  .slogan .content .gambarberanda {
-    width: 100%; /* Make the image fill the width on smaller screens */
-    margin-left: 0; /* Remove left margin on smaller screens */
-  }
-
-  .slogan-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .slogan-text {
-    text-align: center;
-  }
 }
 
 /* Navbar Styling */
@@ -171,18 +209,6 @@ body {
     order: -1;
   }
 }
-
-/* Slogan Section */
-@media (max-width: 768px) {
-  .slogan-container {
-    max-width: 100%;
-  }
-
-  .slogan-text {
-    text-align: center;
-  }
-}
-
 /* Footer Styling */
 @media (max-width: 768px) {
   footer {
@@ -190,121 +216,3 @@ body {
   }
 }
 
-/* Image Section */
-@media (max-width: 768px) {
-  .gambarberanda {
-    width: 100%;
-    margin-left: 0;
-  }
-}
-
-.profil {
-  position: relative;
-}
-
-.sub-navbar {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #53A93E;
-  display: none;
-  flex-direction: column;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.profil:hover .sub-navbar {
-  display: flex;
-}
-
-.sub-navbar a {
-  padding: 10px;
-  color: #F5EEC8;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.sub-navbar a:hover {
-  background-color: #0F993E;
-}
-
-/* Navbar */
-.faq {
-  margin: 50px 0;
-  text-align: center;
-}
-
-.faq h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.item {
-  width: 80%;
-  max-width: 400px;
-  margin: 20px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.item h3 {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.item p {
-  font-size: 14px;
-  color: #555;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #333;
-}
-
-.content {
-  text-align: center;
-}
-
-/* Slogan and Image Section */
-.slogan {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Adjust this value based on your needs */
-}
-
-.slogan-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 800px; /* Adjust the max-width as needed */
-  margin: 0 auto;
-}
-
-.slogan-text {
-  text-align: left;
-}
-
-.slogan-text h1 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.gambarberanda {
-  max-width: 100%;
-  height: auto;
-}

@@ -18,77 +18,13 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #F5EEC8;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-
     .container {
       width: 80%;
       max-width: 1200px; /* Set a max-width to avoid the content becoming too wide */
       margin: 20px auto; /* Add some margin to the top to separate from the navbar */
       padding: 20px;
     }
-
-    body::before {
-      content: "";
-      display: block;
-      height: 80px; /* Adjust this height to match the height of your navbar */
-    }
-
-    /* Navbar styles */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.4rem 7%;
-      border-bottom: 1px solid #0F993E;
-      position: fixed;
-      background-color: #53A93E;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 9999;
-    }
-
-    .navbar-logo {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #FBFBFB;
-    }
-
-    .navbar-logo span {
-      color: #F5EEC8;
-    }
-
-    .navbar ul {
-      display: flex;
-      list-style: none;
-      margin-left: auto;
-    }
-
-    .navbar a {
-      color: #F5EEC8;
-      text-decoration: none;
-    }
-
-    .box {
-      height: 45px;
-      display: flex;
-      cursor: pointer;
-      padding: 10px;
-      background: #fff;
-      border-radius: 30px;
-      margin-left: auto;
-    }
-
+    
     /* Content styles */
     .organisasi-amal {
       display: flex;
@@ -137,26 +73,6 @@
       text-decoration: none;
       border-radius: 4px;
     }
-
-    /* Navbar Styling */
-    @media (max-width: 768px) {
-      .navbar {
-        padding: 1.4rem 5%;
-      }
-
-      .navbar-logo {
-        font-size: 1.5rem;
-      }
-    }
-
-    /* Box Styling */
-    @media (max-width: 768px) {
-      .box {
-        height: 35px;
-        padding: 8px;
-      }
-    }
-
     /* Card Styling */
     @media (max-width: 768px) {
       .card {

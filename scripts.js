@@ -34,3 +34,24 @@ document.addEventListener('DOMContentLoaded', function () {
   handleSearch();
   handleProfileDropdown();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("searchInput");
+
+  // Add an event listener to the search input for handling the search
+  searchInput.addEventListener("input", function () {
+    const searchTerm = searchInput.value.toLowerCase();
+    const contentItems = document.querySelectorAll(".content"); // Adjust the selector based on your content structure
+
+    contentItems.forEach(function (item) {
+      const itemText = item.textContent.toLowerCase();
+
+      // Check if the search term is present in the content item
+      if (itemText.includes(searchTerm)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+});

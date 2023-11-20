@@ -14,6 +14,57 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
+  <style>
+    /* Slogan and Image Section */
+    .slogan {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* Adjust this value based on your needs */
+    }
+  
+    .slogan-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 800px; /* Adjust the max-width as needed */
+      margin: 0 auto;
+    }
+  
+    .slogan-text {
+      text-align: left;
+    }
+  
+    .slogan-text h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  
+    .gambarberanda {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    @media (max-width: 768px) {
+      .slogan-container {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+      }
+  
+      .slogan-text {
+        text-align: center;
+      }
+  
+      .gambarberanda {
+        width: 100%; /* Set the image width to 50% on smaller screens */
+        margin-left: 0; /* Remove left margin on smaller screens */
+      }
+    }
+  </style>
+
   <!-- Javascripts -->
   <script src="scripts.js"></script>
 </head>
@@ -61,9 +112,15 @@
   <!-- Content -->
   <section class="slogan" id="beranda">
     <main class="content">
-      <h1 style="color: #0F993E;">Satukan Tangan,</h1>
-      <h1 style="color: #D1B44D;">Sumbang Kebaikan </h1>
-      <img class="gambarberanda" src="images/imagehome.jpg" alt="Sebuah gambar memberi kue">
+      <div class="slogan-container">
+        <div class="slogan-text">
+          <h1 style="color: #0F993E;">Satukan Tangan,</h1>
+          <h1 style="color: #D1B44D;">Sumbang Kebaikan </h1>
+        </div>
+        <div class="slogan-image">
+          <img class="gambarberanda" src="images/imagehome.jpg" alt="Sebuah gambar memberi kue">
+        </div>
+      </div>
     </main>
   </section>
   <!-- Content End -->

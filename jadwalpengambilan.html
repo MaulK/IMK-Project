@@ -13,6 +13,50 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* Center vertically */
+      min-height: 100vh; /* Ensure full viewport height */
+      margin: 0;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .header {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #0F993E;
+      font-weight: bold;
+    }
+
+    .day {
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #f5f5f5;
+    }
+
+    .full-queue {
+      color: red;
+      font-weight: bold;
+    }
+
+    .empty-queue {
+      color: blue;
+      font-weight: bold;
+  }
+  </style>
   
 
   <!-- Javascripts -->
@@ -60,12 +104,42 @@
   <!-- Navbar end -->
 
   <!-- Content -->
-  
+  <div class="header" id="calendar-header"></div>
+  <div class="calendar" id="calendar-container"></div>
   <!-- Content End -->
 
   <!-- Feather icon -->
   <script>
     feather.replace();
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const calendarContainer = document.getElementById('calendar-container');
+      const header = document.getElementById('calendar-header');
+
+      const today = new Date();
+      const currentMonth = today.toLocaleString('en-US', { month: 'long' });
+      const currentYear = today.getFullYear();
+
+      header.innerText = `${currentMonth} ${currentYear}`;
+
+      for (let day = 1; day <= 30; day++) {
+        const dayElement = document.createElement('div');
+        dayElement.classList.add('day');
+
+        const currentDate = new Date(currentYear, today.getMonth(), day);
+        const dayOfWeek = currentDate.toLocaleString('en-US', { weekday: 'short' });
+
+        if (day % 2 === 0) {
+          dayElement.classList.add('empty-queue');
+          dayElement.innerText = `${day}\n${dayOfWeek}\nQueue Empty`;
+        } else {
+          dayElement.classList.add('full-queue');
+          dayElement.innerText = `${day}\n${dayOfWeek}\nQueue Full`;
+        }
+
+        calendarContainer.appendChild(dayElement);
+      }
+    });
   </script>
 </body>
 
