@@ -16,7 +16,6 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
   color: #ffff;
-  margin-top: 60px; /* Adjusted to account for the fixed navbar */
   margin: 0; /* Remove default body margin */
 }
 
@@ -154,20 +153,28 @@ body::before {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  body {
+    margin-top: 0;
+  }
+
+  body::before {
+    height: 0; /* Remove the height for the body::before on smaller screens */
+  }
+
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     padding: 1.4rem 5%;
-    position: relative; /* Remove fixed position for smaller screens */
+    position: relative;
   }
 
   .navbar-logo {
-    margin-bottom: 10px; /* Adjust spacing for smaller screens */
+    margin-bottom: 10px;
   }
 
   .navbar ul {
     flex-direction: column;
-    align-items: flex-start; /* Align the navbar items to the left */
+    align-items: flex-start;
   }
 
   .navbar ul li {
@@ -179,11 +186,16 @@ body::before {
   }
 
   .box {
-    margin-left: auto; /* Align the search box to the right */
+    margin-left: auto;
   }
 
   .profil {
-    order: -1; /* Move the profile icon to the beginning on smaller screens */
+    order: -1;
+  }
+
+  .content {
+    margin-top: 80px; /* Adjusted to match the height of the fixed navbar */
+    top: 80px; /* Set the top property to cover the gap */
   }
 }
 
@@ -209,10 +221,13 @@ body::before {
     order: -1;
   }
 }
+
 /* Footer Styling */
 @media (max-width: 768px) {
   footer {
     text-align: center;
   }
 }
+
+
 
