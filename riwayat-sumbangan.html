@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Riwayat Sumbangan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet" />
+  <!-- Feather icon -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #F5EEC8;
+        color: #0F993E;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    h2 {
+        margin: 20px 0;
+    }
+
+    #riwayatTable {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #0F993E;
+        color: #fff;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    #searchInput {
+        width: 80%; /* Adjust width for larger screens */
+        max-width: 400px; /* Set a max-width to avoid stretching on larger screens */
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+        #riwayatTable {
+            width: 100%; /* Adjust width for smaller screens */
+        }
+
+        #searchInput {
+            width: 100%; /* Make the search input full-width on smaller screens */
+            max-width: none; /* Remove max-width on smaller screens */
+        }
+    }
+    #confirm-logout-btn,
+    #cancel-logout-btn {
+        background-color: #0F993E;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: inline-block;
+        margin: 10px;
+    }
+
+    /* Style for the confirmation popup */
+    #confirmation-popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    #popup-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
+  </style>
+
+  <!-- Javascripts -->
+  <script src="scripts.js"></script>
+</head>
+
+<body>
+  <div id="confirmation-popup">
+        <div id="popup-content">
+            <h2>Apakah Anda yakin ingin keluar dari akun ini?</h2>
+            <a id="confirm-logout-btn" href="masuk.html" onclick="confirmLogout()">Ya, Keluar</a>
+            <a id="cancel-logout-btn" href="profil.html" onclick="cancelLogout()">Cancel</a>
+        </div>
+  </div>
+  <!-- Navbar start -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">saling<span>peduli</span></a>
+    <ul>
+      <li><a href="halaman-utama.html">Beranda</a></li>
+      <li>
+        <a>Program Sumbangan</a>
+        <ul>
+          <li><a href="organisasi-amal.html">Organisasi Amal</a></li>
+          <li><a href="sumbangan-makanan.html">Sumbangan Makanan</a></li>
+          <li><a href="proses-penilaian.html">Proses Penilaian Makanan</a></li>
+          <li><a href="jadwal-pengambilan.html">Jadwal Pengambilan</a></li>
+        </ul>
+      </li>
+      <li><a>Sumber Daya</a>
+        <ul>
+          <li><a href="panduan-penyimpanan.html">Panduan Penyimpanan Makanan</a></li>
+          <li><a href="panduan-keamanan.html">Panduan Keamanan Pangan</a></li>
+        </ul>
+      </li>
+      <li><a href="berita-dan-artikel.html">Berita dan Artikel</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+
+    <div class="box">
+      <input type="text" placeholder="Search...">
+      <a href="#" id="search"><i data-feather="search"></i></a>
+    </div>
+
+    <div class="profil">
+      <a href="profil.html" id="profil"><i data-feather="user"></i></a>
+      <div class="sub-navbar">
+        <a href="profil.html">Profil Pengguna</a>
+        <a href="riwayat-sumbangan.html">Riwayat Sumbangan</a>
+        <a href="edit-profil.html">Pengaturan</a>
+        <a onclick="showConfirmationPopup()">Keluar</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end -->
+
+  <!-- Content -->
+  <div>
+    <h2>Riwayat Sumbangan</h2>
+    <input type="text" id="searchInput" oninput="searchTable()" placeholder="Search by Nama Penyumbang">
+    <table id="riwayatTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama Penyumbang</th>
+                <th>Organisasi Amal</th>
+                <th>Tanggal</th>
+                <th>Jumlah</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Sample data (you can replace this with dynamic data from your server) -->
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>Charity Organization</td>
+                <td>2023-01-01</td>
+                <td>$100</td>
+                <td>For a good cause</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>Helping Hands</td>
+                <td>2023-02-15</td>
+                <td>$50</td>
+                <td>Emergency Relief</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
+  <!-- Content End -->
+
+  <!-- Feather icon -->
+  <script>
+    feather.replace();
+  </script>
+
+  <script>
+        // Function to filter/search the table
+        function searchTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("riwayatTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1]; // Index 1 corresponds to "Nama Penyumbang"
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+  </script>
+
+  <script>
+    // Function to show the confirmation popup
+    function showConfirmationPopup() {
+        document.getElementById('confirmation-popup').style.display = 'flex';
+    }
+
+    // Function to handle the "Yes, Log Out" button click
+    function confirmLogout() {
+        // Implement your logic for logging out, e.g., redirect to the logout endpoint
+        alert('Anda telah keluar dari akun!');
+        // Redirect to the logout endpoint or home page
+        window.location.href = "logout-endpoint.html";
+    }
+
+    // Function to handle the "Cancel" button click
+    function cancelLogout() {
+        document.getElementById('confirmation-popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Sumbangan Makanan</title>
+  <title>Form Sumbangan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,7 +26,6 @@
       height: 100vh;
       background-color: #F5EEC8;
     }
-    
 
     .container {
       max-width: 600px;
@@ -34,12 +33,17 @@
       text-align: center;
     }
 
-    .image-container {
-      aspect-ratio: 1.51;
-      object-fit: contain;
-      object-position: center;
-      width: 100%;
-      overflow: hidden;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input, select {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ffffff;
+      border-radius: 4px;
     }
 
     .donate-button {
@@ -61,35 +65,31 @@
       }
     }
 
-    @media (max-width: 600px) {
-      .image-container {
-        margin-top: 20px;
-      }
-    }
-
-    /* Body Styling */
-    body {
-      min-height: 100vh;
-    }
-
     /* Container Styling */
     .container {
-      margin-top: 20px; /* Adjust as needed */
+      max-width: 80%;
+      padding: 20px;
     }
 
-    /* Image Container Styling */
-    .image-container {
-      max-height: 100%; /* Adjust as needed */
+    /* Form Styling */
+    form {
+      padding: 10px;
     }
 
-    /* Donate Button Styling */
-    @media (max-width: 600px) {
+    /* Input and Select Styling */
+    input, select {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    /* Button Styling */
+    @media (max-width: 991px) {
       .donate-button {
-        padding: 10px 15px;
+        padding: 12px 16px;
         font-size: 16px;
-        line-height: 20px;
       }
     }
+
 
   </style>
 
@@ -102,23 +102,23 @@
   <nav class="navbar">
     <a href="#" class="navbar-logo">saling<span>peduli</span></a>
     <ul>
-      <li><a href="halamanutama.html">Beranda</a></li>
+      <li><a href="halaman-utama.html">Beranda</a></li>
       <li>
         <a>Program Sumbangan</a>
         <ul>
-          <li><a href="organisasiamal.html">Organisasi Amal</a></li>
-          <li><a href="sumbanganmakanan.html">Sumbangan Makanan</a></li>
-          <li><a href="prosespenilaian.html">Proses Penilaian Makanan</a></li>
-          <li><a href="jadwalpengambilan.html">Jadwal Pengambilan</a></li>
+          <li><a href="organisasi-amal.html">Organisasi Amal</a></li>
+          <li><a href="sumbangan-makanan.html">Sumbangan Makanan</a></li>
+          <li><a href="proses-penilaian.html">Proses Penilaian Makanan</a></li>
+          <li><a href="jadwal-pengambilan.html">Jadwal Pengambilan</a></li>
         </ul>
       </li>
       <li><a>Sumber Daya</a>
         <ul>
-          <li><a href="panduanpenyimpanan.html">Panduan Penyimpanan Makanan</a></li>
-          <li><a href="panduankeamanan.html">Panduan Keamanan Pangan</a></li>
+          <li><a href="panduan-penyimpanan.html">Panduan Penyimpanan Makanan</a></li>
+          <li><a href="panduan-keamanan.html">Panduan Keamanan Pangan</a></li>
         </ul>
       </li>
-      <li><a href="beritadanartikel.html">Berita dan Artikel</a></li>
+      <li><a href="berita-dan-artikel.html">Berita dan Artikel</a></li>
       <li><a href="faq.html">FAQ</a></li>
     </ul>
 
@@ -128,7 +128,7 @@
     </div>
 
     <div class="profil">
-      <a href="#" id="profil"><i data-feather="user"></i></a>
+      <a href="profil.html" id="profil"><i data-feather="user"></i></a>
       <div class="sub-navbar">
         <a href="masuk.html">Masuk</a>
         <a href="daftar.html">Daftar</a>
@@ -138,18 +138,32 @@
   <!-- Navbar end -->
 
   <!-- Content -->
+  <h1 style="color: #53a93e;">Formulir Donasi Makanan</h1>
   <div class="container">
-    <h1 style="color: #53a93e;">JANGAN BUANG MAKANANMU!</h1>
-    <p style="color: #53a93e;">Ada 16.2 juta manusia di Indonesia yang mengalami kelaparan. Mari bantu mereka dengan menyumbangkan sisa makananmu</p>
+    <form>
+      <label for="nama" style="color: #53a93e;">Nama Lengkap:</label>
+      <input type="text" id="nama" name="nama" required>
 
-    <div class="image-container">
-      <img loading="lazy" src="" alt="Ajakan Donasi" />
-    </div>
+      <label for="email" style="color: #53a93e;">Alamat Email:</label>
+      <input type="email" id="email" name="email" required>
 
-    <a href="formsumbangan.html" class="donate-button">DONASI</a>
+      <label for="hp" style="color: #53a93e;">Nomor Handphone:</label>
+      <input type="tel" id="hp" name="hp" required>
+
+      <label for="namaMakanan" style="color: #53a93e;">Nama Makanan:</label>
+      <input type="text" id="namaMakanan" name="namaMakanan" required>
+
+      <label for="jumlahMakanan" style="color: #53a93e;">Jumlah Makanan:</label>
+      <input type="number" id="jumlahMakanan" name="jumlahMakanan" required>
+
+      <label for="alamatPengambilan" style="color: #53a93e;">Alamat Pengambilan:</label>
+      <input type="text" id="alamatPengambilan" name="alamatPengambilan" required>
+
+      <a href="#" class="donate-button">SUMBANG</a>
+    </form>
   </div>
   <!-- Content End -->
-  
+
   <!-- Feather icon -->
   <script>
     feather.replace();
