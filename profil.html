@@ -110,31 +110,48 @@
 
     .parent-container {
         display: flex;
+        flex-direction: column; /* Display child elements in a column for smaller screens */
         align-items: center;
     }
 
     .about-me-container {
         background-color: #fff;
-        padding: 296px;
+        padding: 20px; /* Adjust padding for better responsiveness */
         border-radius: 5px;
-        margin :10px;
-        border: 0.5px solid #000; /* Adjust the border-width */
+        margin: 10px;
+        border: 0.5px solid #000;
     }
 
     .profile-identity {
         color: #0F993E;
         background-color: #fff;
-        border: 0.5px solid #000; /* Adjust the border-width */
+        border: 0.5px solid #000;
         border-radius: 5px;
-        padding: 80px;
+        padding: 20px; /* Adjust padding for better responsiveness */
         text-align: left;
-        padding-bottom: 410px;
-        margin:10px
+        margin: 10px;
     }
 
     .top-profile {
         text-align: left;
     }
+
+    @media (min-width: 768px) {
+        /* Apply additional styling for larger screens if needed */
+        .parent-container {
+            flex-direction: row;
+        }
+
+        .about-me-container {
+            padding: 296px;
+        }
+
+        .profile-identity {
+            padding: 80px;
+            padding-bottom: 410px;
+        }
+    }
+
   </style>
 
   <!-- Javascripts -->
