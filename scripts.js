@@ -55,3 +55,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Function to handle the "Save Profile" button click
+function saveProfile() {
+  // Implement your logic to save the edited profile
+  alert('Data telah disimpan!');
+}
+
+// Function to show the confirmation popup
+function showConfirmationPopup() {
+  document.getElementById('confirmation-popup').style.display = 'flex';
+}
+
+// Function to handle the "Yes, Log Out" button click
+function confirmLogout() {
+  // Implement your logic for logging out, e.g., redirect to the logout endpoint
+  alert('Anda telah keluar dari akun!');
+  // Redirect to the logout endpoint or home page
+  window.location.href = "logout-endpoint.html";
+}
+
+// Function to handle the "Cancel" button click
+function cancelLogout() {
+  document.getElementById('confirmation-popup').style.display = 'none';
+}
+

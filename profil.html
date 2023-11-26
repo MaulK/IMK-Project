@@ -107,6 +107,34 @@
         border-radius: 5px;
         text-align: center;
     }
+
+    .parent-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .about-me-container {
+        background-color: #fff;
+        padding: 296px;
+        border-radius: 5px;
+        margin :10px;
+        border: 0.5px solid #000; /* Adjust the border-width */
+    }
+
+    .profile-identity {
+        color: #0F993E;
+        background-color: #fff;
+        border: 0.5px solid #000; /* Adjust the border-width */
+        border-radius: 5px;
+        padding: 80px;
+        text-align: left;
+        padding-bottom: 410px;
+        margin:10px
+    }
+
+    .top-profile {
+        text-align: left;
+    }
   </style>
 
   <!-- Javascripts -->
@@ -163,31 +191,36 @@
   <!-- Navbar end -->
 
   <!-- Content -->
-  <section class="container mt-5" id="user-profile" style="color: #0F993E;" >
+  <section class="container-profile-id" id="user-profile">
     <div class="row">
-     <div class="col-md-4">
+     <div class="top-profile">
       <div class="profile-picture-banner">
        <img alt="Profile Picture Banner" class="img-fluid" src="images/profil-banner.png"/>
       </div>
       <div class="profile-picture">
        <img alt="Profile Picture" class="img-fluid rounded-circle" src="images/profil-photo.png"/>
       </div>
-     </div>
-     <div class="col-md-8">
       <h2>Full Name</h2>
-      <p>Email:</p>
-      <p>Address:</p>
-      <p>Phone Number:</p>
-      <p>Profession:</p>
      </div>
+     <div class="parent-container">
+        <div class="profile-identity-wrapper">
+            <div class="profile-identity">
+                <p>Email: example@gmail.com</p>
+                <p>Address: jalan no.x</p>
+                <p>Phone Number: +62---------</p>
+                <p>Profession: Pekerjaan</p>
+            </div>
+            <a id="edit-profile-btn" href="edit-profil.html" onclick="editProfile()">Edit Profile</a>
+        </div>
+        <div class="about-me-wrapper">
+            <div class="about-me-container">
+                <h3>About Me</h3>
+                <p>Ceritakan tentang anda</p>
+            </div>
+        </div>
     </div>
-    <div class="row mt-5">
-     <div class="col-md-12">
-      <h3>About Me</h3>
-      <p>Ceritakan tentang anda</p>
-     </div>
     </div>
-    <a id="edit-profile-btn" href="edit-profil.html" onclick="editProfile()">Edit Profile</a>
+    
     </div>
    </section>
   <!-- Content End -->
@@ -197,32 +230,5 @@
     feather.replace();
   </script>
 
-  <script>
-    // Function to handle the "Save Profile" button click
-    function saveProfile() {
-        // Implement your logic to save the edited profile
-        alert('Implement your save profile logic here!');
-    }
-  </script>
-
-  <script>
-    // Function to show the confirmation popup
-    function showConfirmationPopup() {
-        document.getElementById('confirmation-popup').style.display = 'flex';
-    }
-
-    // Function to handle the "Yes, Log Out" button click
-    function confirmLogout() {
-        // Implement your logic for logging out, e.g., redirect to the logout endpoint
-        alert('Anda telah keluar dari akun!');
-        // Redirect to the logout endpoint or home page
-        window.location.href = "logout-endpoint.html";
-    }
-
-    // Function to handle the "Cancel" button click
-    function cancelLogout() {
-        document.getElementById('confirmation-popup').style.display = 'none';
-    }
-  </script>
 </body>
 </html>
